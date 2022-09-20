@@ -1,26 +1,36 @@
 //! Champion randomizer and position picker
 
-const championPicker = document.getElementById("championPicker");
+function log(text) {
+  console.log(text);
+}
+
 let position = document.getElementById("position");
+const championPicker = document.getElementById("championPicker");
 
 const generateChampion = (championPool) => {
   let selectedPosition = position.value;
+  // log(selectedPosition);
   if (selectedPosition === "all") {
-    championPool = championName;
+    championPool = champs.test;
   } else if (selectedPosition === "top") {
-    championPool = championNameTop;
+    championPool = champs.top;
   } else if (selectedPosition === "jungle") {
-    championPool = championNameJg;
+    championPool = champs.jungle;
   } else if (selectedPosition === "mid") {
-    championPool = championNameMid;
+    championPool = champs.mid;
   } else if (selectedPosition === "adc") {
-    championPool = championNameADC;
+    championPool = champs.adc;
   } else if (selectedPosition === "support") {
-    championPool = championNameSupp;
+    championPool = champs.support;
   }
+  // log(championPool);
 
   let randomChampion = Math.floor(Math.random() * championPool.length);
-  document.getElementById("yourChamp").innerHTML = championPool[randomChampion];
+  const yourChampName = document.getElementById("yourChampName");
+  const yourChampImg = document.getElementById("yourChampImg");
+  yourChampName.innerHTML = championPool[randomChampion].name;
+  yourChampImg.src = championPool[randomChampion].icon;
+  yourChampImg.alt = championPool[randomChampion].name;
 };
 
 championPicker.addEventListener("click", generateChampion);

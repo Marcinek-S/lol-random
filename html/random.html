@@ -6,6 +6,7 @@
     <link rel="shortcut icon" type="image/jpg" href="/img/logo/favicon.png" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href='/css/random.css'>
     <title>League Of Random</title>
 
 </head>
@@ -18,40 +19,37 @@
             </div>
         </header>
         <main>
-            <div class="content">
+            <div class="wrapper">
                 <div class="welcome">
                     <h2>Welcome on League Of Random </h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id laboriosam harum asperiores, culpa soluta. Sint tempore nulla quas accusantium earum rem laboriosam necessitatibus tenetur soluta expedita? Laboriosam minus excepturi quas, et quae aliquam, sint provident tenetur odit! Praesentium architecto rerum hic dolores, numquam magni repudiandae, ea voluptas, repellendus aliquam quis!</p>
                 </div>
-                <div class="left">
-                    <div class="champion">
-                        <h3>Choose position</h3>
-                         <select id="position">
-                            <option value="all">All lines</option>
-                            <option value="top">Top</option>
-                            <option value="jungle">Jungle</option>
-                            <option value="mid">Mid</option>
-                            <option value="adc">ADC</option>
-                            <option value="support">Support</option>
-                        </select>
-                        <button onclick="generateChampion()" id="championPicker" class="fa fa-random"></button>
-                        <div id="champion"><h1>Your champion:</h1><br><h2 id="yourChamp"></h2></div>
+                <div class="champion">
+                    <h3>Choose position</h3>
+                    <select id="position">
+                        <option value="all">All lines</option>
+                        <option value="top">Top</option>
+                        <option value="jungle">Jungle</option>
+                        <option value="mid">Mid</option>
+                        <option value="adc">ADC</option>
+                        <option value="support">Support</option>
+                    </select>
+                    <button onclick="generateChampion()" id="championPicker" class="fa fa-random"></button>
+                    <h1>Your champion:</h1>
+                    <div id="yourChamp"><img id="yourChampImg" alt="" src="" ><h2 id="yourChampName"></h2></div>
+                </div>
+                <div class="build">
+                    <h3>Generate build</h3>
+                    <button onclick="" class="fa fa-random"></button>
+                    <div class="items">
+                        <div id="mystic"><img src alt></div>
+                        <div id="item1"></div>
+                        <div id="item2"></div>
+                        <div id="item3"></div>
+                        <div id="item4"></div>
+                        <div id="boots1"></div> 
                     </div>
                 </div>
-                <!-- <div class="right">
-                    <div class="build">
-                        <h3>Generate build</h3>
-                        <button onclick="generate1()" class="fa fa-random"></button>
-                        <div class="fixbuttons">
-                            <div id="mystic"><h1></h1></div>
-                            <div id="item1"></div>
-                            <div id="item2"></div>
-                            <div id="item3"></div>
-                            <div id="item4"></div>
-                            <div id="boots1"></div> 
-                        </div>
-                    </div>
-                </div> -->
             </div>
             <script src="../js/names.js"></script>
             <script src="../js/random.js"></script>
