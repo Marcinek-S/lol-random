@@ -13,17 +13,17 @@
 
 <body>
     <div class="page">
-        <header>
             <div class="logo">
                 <h1>League Of Random</h1>
             </div>
-        </header>
-        <main>
+
             <div class="wrapper">
+
                 <div class="welcome">
                     <h2>Welcome on League Of Random </h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id laboriosam harum asperiores, culpa soluta. Sint tempore nulla quas accusantium earum rem laboriosam necessitatibus tenetur soluta expedita? Laboriosam minus excepturi quas, et quae aliquam, sint provident tenetur odit! Praesentium architecto rerum hic dolores, numquam magni repudiandae, ea voluptas, repellendus aliquam quis!</p>
                 </div>
+
                 <div class="champion">
                     <h3>Choose position</h3>
                     <select id="position">
@@ -34,26 +34,38 @@
                         <option value="adc">ADC</option>
                         <option value="support">Support</option>
                     </select>
-                    <button onclick="generateChampion()" id="championPicker" class="fa fa-random"></button>
+                    <button id="championPicker" class="fa fa-random"></button>
                     <h1>Your champion:</h1>
                     <div id="yourChamp"><img id="yourChampImg" alt="" src="" ><h2 id="yourChampName"></h2></div>
                 </div>
+
                 <div class="build">
-                    <h3>Generate build</h3>
-                    <button onclick="" class="fa fa-random"></button>
+                    <h3>Choose build type</h3>
+                    <select id="builType">
+                        <option value="all">Total random</option>
+                        <option value="normal">Normal</option>
+                    </select>
+                    <button class="fa fa-random"></button>
                     <div class="items">
-                        <div id="mystic"><img src alt></div>
+                        <ul>
+                            <li class="mytic"><img src="" alt=""><h1></h1></li>
+                            <li class="item1"><img src="" alt=""><h1></h1></li>
+                            <li class="item2"><img src="" alt=""><h1></h1></li>
+                            <li class="item3"><img src="" alt=""><h1></h1></li>
+                            <li class="item4"><img src="" alt=""><h1></h1></li>
+                            <li class="boots"><img src="" alt=""><h1></h1></li>
+                        </ul>
+                        <!-- <div id="mystic"><img src alt></div>
                         <div id="item1"></div>
                         <div id="item2"></div>
                         <div id="item3"></div>
                         <div id="item4"></div>
-                        <div id="boots1"></div> 
+                        <div id="boots1"></div>  -->
                     </div>
                 </div>
             </div>
             <script src="../js/names.js"></script>
             <script src="../js/random.js"></script>
-        </main>
         <footer>
             <h5>Wersja : <i>Alpha 1.5</i> Created by Marcin</h5>
         </footer>

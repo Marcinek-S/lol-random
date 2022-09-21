@@ -10,3 +10,7 @@
   left: 10%;
   font-size: 52px;
 }/*# sourceMappingURL=random.css.map */
+
+li{
+  float: left;
+}

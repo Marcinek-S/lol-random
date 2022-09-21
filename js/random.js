@@ -11,7 +11,7 @@ const generateChampion = (championPool) => {
   let selectedPosition = position.value;
   // log(selectedPosition);
   if (selectedPosition === "all") {
-    championPool = champs.test;
+    championPool = champs.all;
   } else if (selectedPosition === "top") {
     championPool = champs.top;
   } else if (selectedPosition === "jungle") {
@@ -23,16 +23,60 @@ const generateChampion = (championPool) => {
   } else if (selectedPosition === "support") {
     championPool = champs.support;
   }
+
   // log(championPool);
 
   let randomChampion = Math.floor(Math.random() * championPool.length);
   const yourChampName = document.getElementById("yourChampName");
   const yourChampImg = document.getElementById("yourChampImg");
-  yourChampName.innerHTML = championPool[randomChampion].name;
-  yourChampImg.src = championPool[randomChampion].icon;
-  yourChampImg.alt = championPool[randomChampion].name;
+
+  fetch(
+    "http://ddragon.leagueoflegends.com/cdn/12.18.1/data/en_US/champion.json"
+  )
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      // console.log(data.data);
+      let name = data.data[championPool[randomChampion]].name;
+      let id = data.data[championPool[randomChampion]].id;
+      log(name);
+      yourChampImg.src =
+        "http://ddragon.leagueoflegends.com/cdn/12.18.1/img/champion/" +
+        id +
+        ".png";
+      yourChampName.innerHTML = name;
+      yourChampImg.alt = name;
+    });
 };
 
 championPicker.addEventListener("click", generateChampion);
 
 //! Item randomizer
+
+const generateItmes = (mystic, items, boots) => {
+  // log(championPool);
+  mystic = mysticItem;
+  let randomItems = Math.floor(Math.random() * championPool.length);
+  const yourChampName = document.getElementById("yourChampName");
+  const yourChampImg = document.getElementById("yourChampImg");
+
+  fetch("http://ddragon.leagueoflegends.com/cdn/12.18.1/data/en_US/item.json")
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      // console.log(data.data);
+      let name = data.data[championPool[randomChampion]].name;
+      let id = data.data[championPool[randomChampion]].id;
+      log(name);
+      yourChampImg.src =
+        "http://ddragon.leagueoflegends.com/cdn/12.18.1/img/champion/" +
+        id +
+        ".png";
+      yourChampName.innerHTML = name;
+      yourChampImg.alt = name;
+    });
+};
+
+championPicker.addEventListener("click", generateChampion);
