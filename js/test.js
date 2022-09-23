@@ -1,59 +1,3 @@
-//! Champion randomizer and position picker
-
-function log(text) {
-  console.log(text);
-}
-
-let position = document.getElementById("position");
-const championPicker = document.getElementById("championPicker");
-
-const generateChampion = (championPool) => {
-  let selectedPosition = position.value;
-  // log(selectedPosition);
-  if (selectedPosition === "all") {
-    championPool = champs.all;
-  } else if (selectedPosition === "top") {
-    championPool = champs.top;
-  } else if (selectedPosition === "jungle") {
-    championPool = champs.jungle;
-  } else if (selectedPosition === "mid") {
-    championPool = champs.mid;
-  } else if (selectedPosition === "adc") {
-    championPool = champs.adc;
-  } else if (selectedPosition === "support") {
-    championPool = champs.support;
-  }
-
-  // log(championPool);
-
-  let randomChampion = Math.floor(Math.random() * championPool.length);
-  const yourChampName = document.getElementById("yourChampName");
-  const yourChampImg = document.getElementById("yourChampImg");
-
-  fetch(
-    "http://ddragon.leagueoflegends.com/cdn/12.18.1/data/en_US/champion.json"
-  )
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      // console.log(data.data);
-      let name = data.data[championPool[randomChampion]].name;
-      let id = data.data[championPool[randomChampion]].id;
-
-      yourChampImg.src =
-        "http://ddragon.leagueoflegends.com/cdn/12.18.1/img/champion/" +
-        id +
-        ".png";
-      yourChampName.innerHTML = name;
-      yourChampImg.alt = name + " icon";
-    });
-};
-
-championPicker.addEventListener("click", generateChampion);
-
-//! Item randomizer
-
 const itemPicker = document.getElementById("itemPicker");
 
 let itemsToPick = {
@@ -96,17 +40,16 @@ const generateItems = (type, nameID, imgID) => {
   imgID.src =
     "http://ddragon.leagueoflegends.com/cdn/12.18.1/img/item/" +
     itemsToPick[type].img[picked];
-  imgID.alt = itemsToPick[type].name[picked] + " icon";
+  imgID.alt = itemsToPick[type].name[picked] + "icon";
   nameID.innerHTML = itemsToPick[type].name[picked];
 };
 
 const getBuild = () => {
-  let selectedPosition = position.value;
   generateItems("mystic", yourItemName1, yourItemImg1);
   generateItems("normal", yourItemName2, yourItemImg2);
   generateItems("normal", yourItemName3, yourItemImg3);
   generateItems("normal", yourItemName4, yourItemImg4);
-  generateItems("boots", yourItemName6, yourItemImg6);
+
   if (selectedPosition === "support") {
     generateItems("support", yourItemName5, yourItemImg5);
     log("supp");
@@ -114,6 +57,7 @@ const getBuild = () => {
     generateItems("normal", yourItemName5, yourItemImg5);
     log("normal");
   }
+  generateItems("boots", yourItemName6, yourItemImg6);
 };
 
 itemPicker.addEventListener("click", getBuild);
