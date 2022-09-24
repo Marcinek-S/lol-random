@@ -1,5 +1,4 @@
 const champs = {
-  //TODO! do poprawy nazwy top jg mid adc support i pewnie itemy
   all: [
     "Aatrox",
     "Ahri",

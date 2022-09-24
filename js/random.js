@@ -90,7 +90,7 @@ fetch("http://ddragon.leagueoflegends.com/cdn/12.18.1/data/en_US/item.json")
     });
   });
 
-const generateItems = (type, nameID, imgID) => {
+const generateMysticBootsSupport = (type, nameID, imgID) => {
   let picked = Math.floor(Math.random() * itemsToPick[type].name.length);
 
   imgID.src =
@@ -100,20 +100,35 @@ const generateItems = (type, nameID, imgID) => {
   nameID.innerHTML = itemsToPick[type].name[picked];
 };
 
-const getBuild = () => {
+const generateNormalItems = (type, nameID, imgID, array, index) => {
+  imgID.src =
+    "http://ddragon.leagueoflegends.com/cdn/12.18.1/img/item/" +
+    itemsToPick[type].img[array[index]];
+  nameID.alt = itemsToPick[type].name[array[index]] + " icon";
+  nameID.innerHTML = itemsToPick[type].name[array[index]];
+};
+
+const generateNormal = (type1) => {
   let selectedPosition = position.value;
-  generateItems("mystic", yourItemName1, yourItemImg1);
-  generateItems("normal", yourItemName2, yourItemImg2);
-  generateItems("normal", yourItemName3, yourItemImg3);
-  generateItems("normal", yourItemName4, yourItemImg4);
-  generateItems("boots", yourItemName6, yourItemImg6);
-  if (selectedPosition === "support") {
-    generateItems("support", yourItemName5, yourItemImg5);
-    log("supp");
-  } else {
-    generateItems("normal", yourItemName5, yourItemImg5);
-    log("normal");
+  let number = [];
+  while (number.length < 4) {
+    let picked = Math.floor(Math.random() * itemsToPick[type1].name.length);
+    if (number.indexOf(picked) === -1) number.push(picked);
   }
+  generateNormalItems("normal", yourItemName2, yourItemImg2, number, 0);
+  generateNormalItems("normal", yourItemName3, yourItemImg3, number, 1);
+  generateNormalItems("normal", yourItemName4, yourItemImg4, number, 2);
+  if (selectedPosition === "support") {
+    generateMysticBootsSupport("support", yourItemName5, yourItemImg5);
+  } else {
+    generateNormalItems("normal", yourItemName5, yourItemImg5, number, 3);
+  }
+};
+
+const getBuild = () => {
+  generateMysticBootsSupport("mystic", yourItemName1, yourItemImg1);
+  generateNormal("normal", "support");
+  generateMysticBootsSupport("boots", yourItemName6, yourItemImg6);
 };
 
 itemPicker.addEventListener("click", getBuild);
