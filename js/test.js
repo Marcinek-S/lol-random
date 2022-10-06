@@ -69,20 +69,35 @@ const generateNormalItems = (type, nameID, imgID, array, index) => {
 const generateNormal = (type1) => {
   let selectedPosition = position.value;
   let number = [];
+  let kurwa = 0;
+
+  // console.log(number);
+  console.log(itemsToPick);
+  if (yourItemName1.textContent === itemsToPick.mystic.name[0]) {
+    kurwa = itemsToPick[type1].name.indexOf("Maw of Malmortius");
+    itemsToPick[type1].name.map((item) => {
+      if (item === "Maw of Malmortius") {
+        itemsToPick.normal.name.splice(kurwa, 1);
+      }
+    });
+    console.log(kurwa);
+    console.log(itemsToPick);
+  }
+
   while (number.length < 4) {
     let picked = Math.floor(Math.random() * itemsToPick[type1].name.length);
     if (number.indexOf(picked) === -1) number.push(picked);
   }
-  log(number);
-  if (yourItemName1.textContent === itemsToPick.mystic.name[0]) {
-    while (number.length < 4) {
-      let picked = Math.floor(Math.random() * itemsToPick[type1].name.length);
-      if (number.indexOf(picked) === -1) number.push(picked);
-    }
-    generateNormalItems("normal", yourItemName2, yourItemImg2, number, 0);
-    log("cipa");
-    log(number);
-  }
+
+  // if (yourItemName1.textContent === itemsToPick.mystic.name[0]) {
+  //   while (number.length < 4) {
+  //     let picked = Math.floor(Math.random() * itemsToPick[type1].name.length);
+  //     if (number.indexOf(picked) === -1) number.push(picked);
+  //   }
+  //   generateNormalItems("normal", yourItemName2, yourItemImg2, number, 0);
+  //   console.log("cipa");
+  //   console.log(number);
+  // }
   generateNormalItems("normal", yourItemName2, yourItemImg2, number, 0);
   // generateNormalItems("normal", yourItemName3, yourItemImg3, number, 1);
   // generateNormalItems("normal", yourItemName4, yourItemImg4, number, 2);
