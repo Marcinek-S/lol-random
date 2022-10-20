@@ -30,9 +30,7 @@ const generateChampion = (championPool) => {
   const yourChampName = document.getElementById("yourChampName");
   const yourChampImg = document.getElementById("yourChampImg");
 
-  fetch(
-    "http://ddragon.leagueoflegends.com/cdn/12.18.1/data/en_US/champion.json"
-  )
+  fetch("/js/champions.json")
     .then((res) => {
       return res.json();
     })
@@ -63,7 +61,7 @@ let itemsToPick = {
   support: { name: [], img: [] },
 };
 
-fetch("http://ddragon.leagueoflegends.com/cdn/12.18.1/data/en_US/item.json")
+fetch("/js/items.json")
   .then((res) => {
     return res.json();
   })
