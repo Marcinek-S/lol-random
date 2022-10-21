@@ -40,9 +40,9 @@ const generateChampion = (championPool) => {
       let id = data.data[championPool[randomChampion]].id;
 
       yourChampImg.src =
-        "http://ddragon.leagueoflegends.com/cdn/12.18.1/img/champion/" +
+        "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/" +
         id +
-        ".png";
+        "_0.jpg";
       yourChampName.innerHTML = name;
       yourChampImg.alt = name + " icon";
     });

@@ -1,16 +1,186 @@
-#yourChamp {
-  position: relative;
-  text-align: center;
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-#yourChampName {
-  color: red;
+.menu {
+  width: 100%;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.menuLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: grey;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+
+.menuLeft h1 {
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin-left: 25px;
+}
+
+.menuRight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: grey;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  text-align: right;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.menuRight a {
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin-right: 50px;
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: 100px;
+}
+
+.wrapper select {
+  width: 30%;
+  height: 5%;
+  font-size: 110%;
   position: absolute;
-  top: 0;
-  left: 10%;
-  font-size: 52px;
-}/*# sourceMappingURL=random.css.map */
-
-li{
-  float: left;
+  top: 10%;
+  right: 10%;
 }
+
+.fa-random {
+  position: absolute;
+  bottom: 15%;
+  right: 50%;
+  padding: 10px 30px;
+  border: none;
+  background-color: green;
+  -webkit-transform: translate(50%, 50%);
+          transform: translate(50%, 50%);
+}
+
+.picker {
+  background-color: red;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  position: relative;
+  height: 100vh;
+  border-right: 1px solid black;
+}
+
+.picker h2 {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+
+.picker #yourChamp {
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+  background-color: blue;
+  -webkit-transform: translate(50%, 50%);
+          transform: translate(50%, 50%);
+  height: 65%;
+  width: 100%;
+}
+
+.picker #yourChamp #yourChampImg {
+  width: 100%;
+  position: absolute;
+}
+
+.picker #yourChamp #yourChampName {
+  position: absolute;
+  text-align: center;
+  bottom: 0%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 200%;
+  color: #b4a519;
+}
+
+.picker #youritems {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+  background-color: yellow;
+  -webkit-transform: translate(50%, 50%);
+          transform: translate(50%, 50%);
+  height: 65%;
+  width: 100%;
+}
+
+.picker ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.picker li {
+  background-color: green;
+  text-align: center;
+  margin: 50px;
+}/*# sourceMappingURL=random.css.map */

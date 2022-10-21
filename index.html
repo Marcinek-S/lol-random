@@ -13,19 +13,14 @@
 
 <body>
     <div class="page">
-            <div class="logo">
-                <h1>League Of Random</h1>
+            <div class="menu">
+                <div class="menuLeft"><h1>League Of Random</h1></div>
+                <div class="menuRight"><a href="/site/patch.html">Patch notes</a></div>
             </div>
 
             <div class="wrapper">
-
-                <div class="welcome">
-                    <h2>Welcome on League Of Random </h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id laboriosam harum asperiores, culpa soluta. Sint tempore nulla quas accusantium earum rem laboriosam necessitatibus tenetur soluta expedita? Laboriosam minus excepturi quas, et quae aliquam, sint provident tenetur odit! Praesentium architecto rerum hic dolores, numquam magni repudiandae, ea voluptas, repellendus aliquam quis!</p>
-                </div>
-
-                <div class="champion">
-                    <h3>Choose position</h3>
+                <div class="picker">
+                    <h2>Choose position</h2>
                     <select id="position">
                         <option value="all">All lines</option>
                         <option value="top">Top</option>
@@ -35,32 +30,30 @@
                         <option value="support">Support</option>
                     </select>
                     <button id="championPicker" class="fa fa-random"></button>
-                    <h1>Your champion:</h1>
-                    <div id="yourChamp"><img id="yourChampImg" alt="" src="" ><h2 id="yourChampName"></h2></div>
+                    <div id="yourChamp">
+                        <img id="yourChampImg" alt="" src="">
+                        <h3 id="yourChampName"></h3>
+                    </div>
                 </div>
 
-                <div class="build">
-                    <h3>Choose build type</h3>
+                <div class="picker">
+                    <h2>Choose build type</h2>
                     <select id="builType">
                         <option value="all">Total random</option>
                         <option value="normal" disabled>Normal*</option>
                     </select>
                     <button id="itemPicker" class="fa fa-random"></button>
-                    <div class="items">
+                    <div id="youritems">
                         <ul>
-                            <li class="mytic"><img src="" alt="" id="yourItemImg1"><h1 id="yourItemName1"></h1></li>
-                            <li class="item1"><img src="" alt="" id="yourItemImg2"><h1 id="yourItemName2"></h1></li>
-                            <li class="item2"><img src="" alt="" id="yourItemImg3"><h1 id="yourItemName3"></h1></li>
-                            <li class="item3"><img src="" alt="" id="yourItemImg4"><h1 id="yourItemName4"></h1></li>
-                            <li class="item4"><img src="" alt="" id="yourItemImg5"><h1 id="yourItemName5"></h1></li>
-                            <li class="boots"><img src="" alt="" id="yourItemImg6"><h1 id="yourItemName6"></h1></li>
+                            <li class="item"><img src="" alt="" id="yourItemImg1"><h1 id="yourItemName1"></h1></li>
+                            <li class="item"><img src="" alt="" id="yourItemImg2"><h1 id="yourItemName2"></h1></li>
+                            <li class="item"><img src="" alt="" id="yourItemImg3"><h1 id="yourItemName3"></h1></li>
                         </ul>
-                        <!-- <div id="mystic"><img src alt></div>
-                        <div id="item1"></div>
-                        <div id="item2"></div>
-                        <div id="item3"></div>
-                        <div id="item4"></div>
-                        <div id="boots1"></div>  -->
+                        <ul>
+                            <li class="item"><img src="" alt="" id="yourItemImg4"><h1 id="yourItemName4"></h1></li>
+                            <li class="item"><img src="" alt="" id="yourItemImg5"><h1 id="yourItemName5"></h1></li>
+                            <li class="item"><img src="" alt="" id="yourItemImg6"><h1 id="yourItemName6"></h1></li>
+                        </ul>
                     </div>
                 </div>
             </div>
